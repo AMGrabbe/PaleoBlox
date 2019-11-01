@@ -44,7 +44,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 660e9127216ad0c4f8c8dfc5c45e0b09, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  gameSpeed: 1
+  gameSpeed: 0.73
   scorePerBlocksDestroyed: 83
   scoreText: {fileID: 580064535525324521}
   currentScore: 0
@@ -59,22 +59,6 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: Game Canvas
-      objectReference: {fileID: 0}
-    - target: {fileID: 133498997, guid: 6cc694a6e0568114fbe7e4ae6e18280f, type: 3}
-      propertyPath: m_textInfo.characterCount
-      value: 7
-      objectReference: {fileID: 0}
-    - target: {fileID: 133498997, guid: 6cc694a6e0568114fbe7e4ae6e18280f, type: 3}
-      propertyPath: m_textInfo.wordCount
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 133498997, guid: 6cc694a6e0568114fbe7e4ae6e18280f, type: 3}
-      propertyPath: m_textInfo.lineCount
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 133498997, guid: 6cc694a6e0568114fbe7e4ae6e18280f, type: 3}
-      propertyPath: m_textInfo.pageCount
-      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 3698039127490449016, guid: 6cc694a6e0568114fbe7e4ae6e18280f,
         type: 3}
