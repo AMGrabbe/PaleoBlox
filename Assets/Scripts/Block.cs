@@ -7,7 +7,7 @@ public class Block : MonoBehaviour
     [SerializeField] AudioClip breakSound;
 
     Level level;
-    GameStatus status;
+    GameSession status;
 
 
     private void Start()
@@ -19,7 +19,7 @@ public class Block : MonoBehaviour
 
     private void DestroyBlock()
     {
-        status= FindObjectOfType<GameStatus>();
+        status= FindObjectOfType<GameSession>();
         //Playing the clip on an AudioSource unattached to an object, and destroying it thereafter
         //Play the sound at camera position because that where the AudioListener is
         AudioSource.PlayClipAtPoint(breakSound, Camera.main.transform.position);
