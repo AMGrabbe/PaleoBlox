@@ -13,6 +13,21 @@ public class GameStatus : MonoBehaviour
     //states
     [SerializeField] int currentScore = 0;
 
+    //Singleton Pattern to have only one GameStatus object during the whole game 
+    private void Awake()
+    {
+        int gameStatusCount = FindObjectsOfType<GameStatus>().Length;
+        if (gameStatusCount > 1)
+        {
+            gameObject.SetActive(false);
+            Destroy(gameObject);
+        }
+        else
+        {
+            DontDestroyOnLoad(gameObject);
+        }
+    }
+
     // Start is called before the first frame update
     void Start()
     {
@@ -30,4 +45,5 @@ public class GameStatus : MonoBehaviour
         currentScore += scorePerBlocksDestroyed;
         scoreText.text = currentScore.ToString();
     }
+
 }
