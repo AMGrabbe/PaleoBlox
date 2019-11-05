@@ -31,7 +31,7 @@ public class Block : MonoBehaviour
         //Update the Players score
         status.AddToScore();
     }
-    private void OnCollisionEnter2D(Collision2D collection)
+    private void OnCollisionEnter(Collision collection)
     {
         
         DestroyBlock();

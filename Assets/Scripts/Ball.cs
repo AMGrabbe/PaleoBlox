@@ -10,7 +10,7 @@ public class Ball : MonoBehaviour
     [SerializeField] AudioClip[] ballSound;
 
 
-    Vector2 distance;
+    Vector3 distance;
     bool hasStarted = false;
     AudioSource myAudioSource;
 
@@ -35,7 +35,7 @@ public class Ball : MonoBehaviour
 
     private void StickBallToPaddle()
     {
-        Vector2 paddleOnePosition = new Vector2(paddleOne.transform.position.x, paddleOne.transform.position.y);
+        Vector3 paddleOnePosition = new Vector3(paddleOne.transform.position.x, paddleOne.transform.position.y, 0);
         transform.position = paddleOnePosition + distance;
     }
 
@@ -44,11 +44,11 @@ public class Ball : MonoBehaviour
         if (Input.GetMouseButtonDown(0))
         {
             hasStarted = true;
-            GetComponent<Rigidbody2D>().velocity = new Vector2(velocityX, velocityY);
+            GetComponent<Rigidbody>().velocity = new Vector3(velocityX, velocityY, 0);
         }
     }
     
-    private void OnCollisionEnter2D(Collision2D collision)
+    private void OnCollisionEnter(Collision collision)
     {
         AudioClip clip = ballSound[UnityEngine.Random.Range(0, ballSound.Length)];
         if (hasStarted)
