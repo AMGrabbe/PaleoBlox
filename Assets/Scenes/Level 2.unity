@@ -348,6 +348,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: Block Square
       objectReference: {fileID: 0}
+    - target: {fileID: 6546277387806903871, guid: e19bed7e450d83d489e1cd90bd413f75,
+        type: 3}
+      propertyPath: m_TagString
+      value: Unbreakable
+      objectReference: {fileID: 0}
     - target: {fileID: 6546277387806903857, guid: e19bed7e450d83d489e1cd90bd413f75,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -10358,6 +10363,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: Block Square (3)
       objectReference: {fileID: 0}
+    - target: {fileID: 6546277387806903871, guid: e19bed7e450d83d489e1cd90bd413f75,
+        type: 3}
+      propertyPath: m_TagString
+      value: Unbreakable
+      objectReference: {fileID: 0}
     - target: {fileID: 6546277387806903857, guid: e19bed7e450d83d489e1cd90bd413f75,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -13288,6 +13298,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: Block Square (2)
+      objectReference: {fileID: 0}
+    - target: {fileID: 6546277387806903871, guid: e19bed7e450d83d489e1cd90bd413f75,
+        type: 3}
+      propertyPath: m_TagString
+      value: Unbreakable
       objectReference: {fileID: 0}
     - target: {fileID: 6546277387806903857, guid: e19bed7e450d83d489e1cd90bd413f75,
         type: 3}
