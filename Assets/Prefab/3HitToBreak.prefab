@@ -13,8 +13,8 @@ GameObject:
   - component: {fileID: 6546277387806903859}
   - component: {fileID: 994352391}
   m_Layer: 0
-  m_Name: Block Square
-  m_TagString: Untagged
+  m_Name: 3HitToBreak
+  m_TagString: Breakable
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -72,7 +72,7 @@ SpriteRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_Sprite: {fileID: 21300000, guid: 74df36bb6c8ec2e489c0092bd5c41f4f, type: 3}
-  m_Color: {r: 0.7169812, g: 0.6933073, b: 0.6933073, a: 1}
+  m_Color: {r: 0.68164825, g: 0.6981132, b: 0.6981132, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
@@ -96,6 +96,11 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   breakSound: {fileID: 8300000, guid: 4d4e5fd1398dadc43bef702612016cdd, type: 3}
   blockDestroyedVFX: {fileID: 100000, guid: 7d846c02296ef4dc4abff04ce3e5262c, type: 3}
+  maxHits: 2
+  damageLevelSprites:
+  - {fileID: 21300000, guid: f3cef936953c71448a986ec472b6ea18, type: 3}
+  - {fileID: 21300000, guid: 7595f12b2c343d846a42ca2fb589e31b, type: 3}
+  timesHit: 0
 --- !u!65 &994352391
 BoxCollider:
   m_ObjectHideFlags: 0

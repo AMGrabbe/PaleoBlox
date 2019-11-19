@@ -4,18 +4,28 @@ using UnityEngine;
 
 public class Block : MonoBehaviour
 {
+    
     [SerializeField] AudioClip breakSound;
     [SerializeField] GameObject blockDestroyedVFX;
+    [SerializeField] int maxHits;
+    [SerializeField] Sprite[] damageLevelSprites;
 
     Level level;
-    GameSession status;
+    [SerializeField] int timesHit;
 
 
     private void Start()
     {
-        level=FindObjectOfType<Level>();
+        CountBreakableBlocks();
+    }
 
-        level.CountBreakableBlocks();
+    private void CountBreakableBlocks()
+    {
+        level = FindObjectOfType<Level>();
+        if (tag == "Breakable")
+        {
+            level.CountBlocks();
+        }
     }
 
     private void DestroyBlock()
@@ -40,9 +50,33 @@ public class Block : MonoBehaviour
 
     private void OnCollisionEnter(Collision collection)
     {
-        
-        DestroyBlock();
+        if(tag == "Breakable")
+        {
+            HandleHit();
+        }
 
+
+    }
+
+    private void HandleHit()
+    {
+        timesHit++;
+        
+        if (timesHit >= maxHits)
+        {
+            DestroyBlock();
+        }
+        else
+        {
+            ShowNextSprite();
+        }
+    }
+
+    private void ShowNextSprite()
+    {
+        //first state is not in the array
+        int spriteIndex = timesHit - 1;
+        GetComponent<SpriteRenderer>().sprite = damageLevelSprites[spriteIndex];
     }
 
     private void TriggerSparklesVFX()
