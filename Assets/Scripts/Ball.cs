@@ -35,7 +35,7 @@ public class Ball : MonoBehaviour
 
     private void StickBallToPaddle()
     {
-        Vector3 paddleOnePosition = new Vector3(paddleOne.transform.position.x, paddleOne.transform.position.y, 0);
+        Vector3 paddleOnePosition = new Vector2(paddleOne.transform.position.x, paddleOne.transform.position.y);
         transform.position = paddleOnePosition + distance;
     }
 
@@ -44,11 +44,11 @@ public class Ball : MonoBehaviour
         if (Input.GetMouseButtonDown(0))
         {
             hasStarted = true;
-            GetComponent<Rigidbody>().velocity = new Vector3(velocityX, velocityY, 0);
+            GetComponent<Rigidbody>().velocity = new Vector2(velocityX, velocityY);
         }
     }
     
-    private void OnCollisionEnter(Collision collision)
+    private void OnCollisionEnter2D(Collision2D collision)
     {
         AudioClip clip = ballSound[UnityEngine.Random.Range(0, ballSound.Length)];
         if (hasStarted)
