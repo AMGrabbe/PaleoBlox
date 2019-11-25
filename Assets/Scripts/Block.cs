@@ -48,7 +48,7 @@ public class Block : MonoBehaviour
         AudioSource.PlayClipAtPoint(breakSound, Camera.main.transform.position);
     }
 
-    private void OnCollisionEnter(Collision collection)
+    private void OnCollisionEnter2D(Collision2D collection)
     {
         if(tag == "Breakable")
         {

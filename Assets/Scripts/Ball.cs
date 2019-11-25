@@ -10,9 +10,11 @@ public class Ball : MonoBehaviour
     [SerializeField] AudioClip[] ballSound;
 
 
-    Vector3 distance;
+
+    Vector2 distance;
     bool hasStarted = false;
     AudioSource myAudioSource;
+    Rigidbody2D rigidbody;
 
 
     // Start is called before the first frame update
@@ -20,22 +22,37 @@ public class Ball : MonoBehaviour
     {
         distance = transform.position - paddleOne.transform.position;
         myAudioSource = GetComponent<AudioSource>();
+        rigidbody = GetComponent<Rigidbody2D>();
     }
 
     // Update is called once per frame
     void Update()
     {
+        
+
         if (!hasStarted)
         {
             StickBallToPaddle();
 
             LaunchBallOnMouseClick();
+           
         }
+        else
+        {
+            if(direction.x > 0f && direction.y >0f ||  direction.x > 0f && direction.y <0f )
+                rigidbody.AddTorque(-0.5f);
+            if(direction.x < 0f && direction.y >0f ||  direction.x < 0f && direction.y <0f )
+                rigidbody.AddTorque(0.5f);
+        }
+        
+        
     }
+    
+   
 
     private void StickBallToPaddle()
     {
-        Vector3 paddleOnePosition = new Vector2(paddleOne.transform.position.x, paddleOne.transform.position.y);
+        Vector2 paddleOnePosition = new Vector2(paddleOne.transform.position.x, paddleOne.transform.position.y);
         transform.position = paddleOnePosition + distance;
     }
 
@@ -44,7 +61,7 @@ public class Ball : MonoBehaviour
         if (Input.GetMouseButtonDown(0))
         {
             hasStarted = true;
-            GetComponent<Rigidbody>().velocity = new Vector2(velocityX, velocityY);
+            GetComponent<Rigidbody2D>().velocity = (new Vector2(velocityX, velocityY));
         }
     }
     
