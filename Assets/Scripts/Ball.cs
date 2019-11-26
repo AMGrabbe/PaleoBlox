@@ -1,5 +1,4 @@
-﻿using System.Collections;
-using System.Collections.Generic;
+﻿
 using UnityEngine;
 
 public class Ball : MonoBehaviour
@@ -8,13 +7,14 @@ public class Ball : MonoBehaviour
     [SerializeField] float velocityX = 2f;
     [SerializeField] float velocityY = 15f;
     [SerializeField] AudioClip[] ballSound;
+    [SerializeField] float randomFactor = 0.2f;
 
 
 
     Vector2 distance;
     bool hasStarted = false;
     AudioSource myAudioSource;
-    Rigidbody2D rigidbody;
+    Rigidbody2D myRigidBody2d;
     Vector2 actualPosition;
 
 
@@ -23,7 +23,7 @@ public class Ball : MonoBehaviour
     {
         distance = transform.position - paddleOne.transform.position;
         myAudioSource = GetComponent<AudioSource>();
-        rigidbody = GetComponent<Rigidbody2D>();
+        myRigidBody2d = GetComponent<Rigidbody2D>();
         actualPosition = transform.position;
     }
 
@@ -44,9 +44,9 @@ public class Ball : MonoBehaviour
             Vector2 direction = new Vector2(transform.position.x, transform.position.y) - actualPosition;
             actualPosition= transform.position;
             if(direction.x > 0f && direction.y >0f ||  direction.x > 0f && direction.y <0f )
-                rigidbody.AddTorque(-0.5f);
+                myRigidBody2d.AddTorque(-0.5f);
             if(direction.x < 0f && direction.y >0f ||  direction.x < 0f && direction.y <0f )
-                rigidbody.AddTorque(0.5f);
+                myRigidBody2d.AddTorque(0.5f);
         }
         
         
@@ -65,16 +65,20 @@ public class Ball : MonoBehaviour
         if (Input.GetMouseButtonDown(0))
         {
             hasStarted = true;
-            GetComponent<Rigidbody2D>().velocity = (new Vector2(velocityX, velocityY));
+            myRigidBody2d.velocity = (new Vector2(velocityX, velocityY));
         }
     }
     
     private void OnCollisionEnter2D(Collision2D collision)
     {
-        AudioClip clip = ballSound[UnityEngine.Random.Range(0, ballSound.Length)];
+        float randomAngle = Random.Range(-randomFactor, randomFactor);
+        
         if (hasStarted)
         {
+            AudioClip clip = ballSound[UnityEngine.Random.Range(0, ballSound.Length)];
             myAudioSource.PlayOneShot(clip);
+            //Essentially "Quaternion.Euler(0, 0, randomAngle)" says "rotate by randomAngle around the z axis and by 0 around the x and y axes".
+            myRigidBody2d.velocity = Quaternion.Euler(0, 0, randomAngle) * myRigidBody2d.velocity;;
         }
 
     }
