@@ -15,6 +15,7 @@ public class Ball : MonoBehaviour
     bool hasStarted = false;
     AudioSource myAudioSource;
     Rigidbody2D rigidbody;
+    Vector2 actualPosition;
 
 
     // Start is called before the first frame update
@@ -23,6 +24,7 @@ public class Ball : MonoBehaviour
         distance = transform.position - paddleOne.transform.position;
         myAudioSource = GetComponent<AudioSource>();
         rigidbody = GetComponent<Rigidbody2D>();
+        actualPosition = transform.position;
     }
 
     // Update is called once per frame
@@ -39,6 +41,8 @@ public class Ball : MonoBehaviour
         }
         else
         {
+            Vector2 direction = new Vector2(transform.position.x, transform.position.y) - actualPosition;
+            actualPosition= transform.position;
             if(direction.x > 0f && direction.y >0f ||  direction.x > 0f && direction.y <0f )
                 rigidbody.AddTorque(-0.5f);
             if(direction.x < 0f && direction.y >0f ||  direction.x < 0f && direction.y <0f )

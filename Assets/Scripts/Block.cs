@@ -7,7 +7,6 @@ public class Block : MonoBehaviour
     
     [SerializeField] AudioClip breakSound;
     [SerializeField] GameObject blockDestroyedVFX;
-    [SerializeField] int maxHits;
     [SerializeField] Sprite[] damageLevelSprites;
 
     Level level;
@@ -61,7 +60,7 @@ public class Block : MonoBehaviour
     private void HandleHit()
     {
         timesHit++;
-        
+        int maxHits = damageLevelSprites.Length + 1;
         if (timesHit >= maxHits)
         {
             DestroyBlock();
@@ -76,7 +75,14 @@ public class Block : MonoBehaviour
     {
         //first state is not in the array
         int spriteIndex = timesHit - 1;
+        if(damageLevelSprites[spriteIndex] != null)
+        {
         GetComponent<SpriteRenderer>().sprite = damageLevelSprites[spriteIndex];
+        }
+        else 
+        {
+            Debug.LogError("Block sprite is missing from array of " + gameObject.name);
+        }
     }
 
     private void TriggerSparklesVFX()
