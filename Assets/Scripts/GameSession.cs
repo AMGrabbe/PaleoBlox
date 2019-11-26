@@ -9,9 +9,11 @@ public class GameSession : MonoBehaviour
     [Range(0.1f, 10f)][SerializeField] float gameSpeed = 1f;
     [SerializeField] int scorePerBlocksDestroyed = 83;
     [SerializeField] TextMeshProUGUI scoreText;
+    [SerializeField] bool isAutoplayEnabled;
 
     //states
     [SerializeField] int currentScore = 0;
+
 
     //Singleton Pattern to have only one GameStatus object during the whole game 
     private void Awake()
@@ -51,4 +53,8 @@ public class GameSession : MonoBehaviour
         Destroy(gameObject);
     }
 
+    public bool IsAutoplayEnabled()
+    {
+        return isAutoplayEnabled;
+    }
 }
