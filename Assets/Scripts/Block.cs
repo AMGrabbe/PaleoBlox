@@ -25,6 +25,7 @@ public class Block : MonoBehaviour
         {
             level.CountBlocks();
         }
+       
     }
 
     private void DestroyBlock()
@@ -53,6 +54,10 @@ public class Block : MonoBehaviour
         {
             HandleHit();
         }
+        else if(tag == "Unbreakable")
+        {
+            GetComponent<SpriteRenderer>().color = Color.white;
+        }
 
 
     }
@@ -69,6 +74,8 @@ public class Block : MonoBehaviour
         {
             ShowNextSprite();
         }
+
+        
     }
 
     private void ShowNextSprite()
