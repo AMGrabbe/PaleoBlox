@@ -30,7 +30,7 @@ Transform:
   m_GameObject: {fileID: 1417900866933316501}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 5.1, y: 1.98, z: 0}
-  m_LocalScale: {x: 0.04983, y: 0.04983, z: 0.04983}
+  m_LocalScale: {x: 0.03692403, y: 0.03692403, z: 0.03692403}
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 0
@@ -73,12 +73,12 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 21300000, guid: cd1c3871f7c77664dbfc328a41cd8d0a, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 6f90a4ff6a0efdc418d7203151b2d3a5, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
-  m_Size: {x: 1.28, y: 1.28}
+  m_Size: {x: 19.2, y: 19.2}
   m_AdaptiveModeThreshold: 0.5
   m_SpriteTileMode: 0
   m_WasSpriteAssigned: 1
@@ -116,8 +116,9 @@ MonoBehaviour:
   velocityX: 2
   velocityY: 10
   ballSound:
-  - {fileID: 8300000, guid: 6bc34c17e2b1a6d4d992ceccc6b739d7, type: 3}
   - {fileID: 8300000, guid: bafac667d4755624cbd869c27eb4742f, type: 3}
+  - {fileID: 8300000, guid: 62f28e1c7b0895d46aba4b7f186dc545, type: 3}
+  randomFactor: 0.2
 --- !u!50 &1417900866933316500
 Rigidbody2D:
   serializedVersion: 4
