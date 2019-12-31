@@ -2,26 +2,23 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
+using TMPro;
 
 public class SceneLoader : MonoBehaviour
 {
-    GameSession gameStatus;
-
     public void LoadNextScene()
     {
         int currentScene = SceneManager.GetActiveScene().buildIndex;
         if(currentScene != SceneManager.sceneCountInBuildSettings - 1)
             SceneManager.LoadScene(currentScene+1);
         else 
-            CallStartScene();
-        
+            CallStartScene();        
     }
 
     public void CallStartScene()
     {
         SceneManager.LoadScene(0);
         FindObjectOfType<GameSession>().ResetScore();
-
     }
 
     public void QuitGame()
