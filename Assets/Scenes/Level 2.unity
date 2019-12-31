@@ -3923,6 +3923,11 @@ PrefabInstance:
       propertyPath: scorePerBlocksDestroyed
       value: 11
       objectReference: {fileID: 0}
+    - target: {fileID: 2471707531708897069, guid: fdb60618be06ae44486fc66e80645212,
+        type: 3}
+      propertyPath: isAutoplayEnabled
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: fdb60618be06ae44486fc66e80645212, type: 3}
 --- !u!4 &272480901 stripped

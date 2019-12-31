@@ -14,6 +14,8 @@ public class GameSession : MonoBehaviour
     //states
     [SerializeField] int currentScore = 0;
 
+    public int CurrentScore { get => currentScore; set => currentScore = value; }
+
 
     //Singleton Pattern to have only one GameStatus object during the whole game 
     private void Awake()
@@ -33,7 +35,7 @@ public class GameSession : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        scoreText.text = currentScore.ToString();
+        scoreText.text = CurrentScore.ToString();
     }
 
     // Update is called once per frame
@@ -44,8 +46,8 @@ public class GameSession : MonoBehaviour
 
     public void AddToScore()
     {
-        currentScore += scorePerBlocksDestroyed;
-        scoreText.text = currentScore.ToString();
+        CurrentScore += scorePerBlocksDestroyed;
+        scoreText.text = CurrentScore.ToString();
     }
 
     public void ResetScore()
@@ -57,4 +59,6 @@ public class GameSession : MonoBehaviour
     {
         return isAutoplayEnabled;
     }
+
+
 }
