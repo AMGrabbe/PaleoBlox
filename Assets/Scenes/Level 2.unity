@@ -3848,11 +3848,6 @@ PrefabInstance:
       propertyPath: m_Name
       value: GameStatus
       objectReference: {fileID: 0}
-    - target: {fileID: 3504360194872033801, guid: fdb60618be06ae44486fc66e80645212,
-        type: 3}
-      propertyPath: m_IsActive
-      value: 1
-      objectReference: {fileID: 0}
     - target: {fileID: 6961692093785557906, guid: fdb60618be06ae44486fc66e80645212,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -3911,21 +3906,6 @@ PrefabInstance:
     - target: {fileID: 4278102305408856292, guid: fdb60618be06ae44486fc66e80645212,
         type: 3}
       propertyPath: m_LocalPosition.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 2471707531708897069, guid: fdb60618be06ae44486fc66e80645212,
-        type: 3}
-      propertyPath: gameSpeed
-      value: 1.2
-      objectReference: {fileID: 0}
-    - target: {fileID: 2471707531708897069, guid: fdb60618be06ae44486fc66e80645212,
-        type: 3}
-      propertyPath: scorePerBlocksDestroyed
-      value: 11
-      objectReference: {fileID: 0}
-    - target: {fileID: 2471707531708897069, guid: fdb60618be06ae44486fc66e80645212,
-        type: 3}
-      propertyPath: isAutoplayEnabled
       value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
@@ -29878,7 +29858,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1417900866933316503, guid: 59b757866dcb1a548b72634711cbf44e,
         type: 3}
-      propertyPath: paddleOne
+      propertyPath: paddle
       value: 
       objectReference: {fileID: 1389600435}
     m_RemovedComponents: []

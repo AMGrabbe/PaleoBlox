@@ -112,13 +112,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e3c1a2ae975ca774ab45514f5d43ccbe, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  paddleOne: {fileID: 0}
+  paddle: {fileID: 0}
   velocityX: 2
   velocityY: 10
   ballSound:
   - {fileID: 8300000, guid: bafac667d4755624cbd869c27eb4742f, type: 3}
   - {fileID: 8300000, guid: 62f28e1c7b0895d46aba4b7f186dc545, type: 3}
-  randomFactor: 0.2
 --- !u!50 &1417900866933316500
 Rigidbody2D:
   serializedVersion: 4

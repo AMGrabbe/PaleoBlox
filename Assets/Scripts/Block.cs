@@ -24,8 +24,7 @@ public class Block : MonoBehaviour
         if (tag == "Breakable")
         {
             level.CountBlocks();
-        }
-       
+        } 
     }
 
     private void DestroyBlock()
@@ -35,8 +34,6 @@ public class Block : MonoBehaviour
         Destroy(gameObject);
 
         level.BlockDestroyed();
-
-
     }
 
     //Playing the clip on an AudioSource unattached to an object, and destroying it thereafter
@@ -58,8 +55,6 @@ public class Block : MonoBehaviour
         {
             GetComponent<SpriteRenderer>().color = Color.white;
         }
-
-
     }
 
     private void HandleHit()
@@ -74,8 +69,6 @@ public class Block : MonoBehaviour
         {
             ShowNextSprite();
         }
-
-        
     }
 
     private void ShowNextSprite()
@@ -97,5 +90,4 @@ public class Block : MonoBehaviour
         GameObject sparkles = Instantiate(blockDestroyedVFX, transform.position, transform.rotation);
         Destroy(sparkles,1f);
     }
-
 }

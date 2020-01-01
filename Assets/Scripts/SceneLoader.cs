@@ -12,7 +12,7 @@ public class SceneLoader : MonoBehaviour
         if(currentScene != SceneManager.sceneCountInBuildSettings - 1)
             SceneManager.LoadScene(currentScene+1);
         else 
-            CallStartScene();        
+            CallStartScene();      
     }
 
     public void CallStartScene()

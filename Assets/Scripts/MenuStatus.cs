@@ -8,7 +8,6 @@ public class MenuStatus : MonoBehaviour
     GameSession gameSession;
     [SerializeField] TextMeshProUGUI MenuText;
 
-    // Start is called before the first frame update
     void Start()
     {
         MenuText.text = "Welcome to PaleoBlox - Let's get started!";
@@ -16,15 +15,15 @@ public class MenuStatus : MonoBehaviour
             gameSession = FindObjectOfType<GameSession>();
     }
 
-    // Update is called once per frame
     void Update()
     {
         if(gameSession != null)
         {
-            if(gameSession.CurrentScore > 12000)
-                MenuText.text = "You reached:" + gameSession.CurrentScore + " points. \n Not bad try again!";
-            else 
-                MenuText.text = "You reached:" + gameSession.CurrentScore + " points. \n Not bad try again!";      
+            int score = gameSession.CurrentScore;
+            if (gameSession.CurrentScore < 100)
+                MenuText.text = "You reached:" + score + " points. \n You can do it better. Try again!";
+            else if (gameSession.CurrentScore >= 100)
+                MenuText.text = "You reached:" + score + " points. \n Not bad try again!";      
         }
     }
 }
