@@ -12,10 +12,13 @@ public class GameSession : MonoBehaviour
     [SerializeField] bool isAutoplayEnabled;
 
     //states
-    [SerializeField] int currentScore = 0;
+    int currentScore = 0;
 
-    public int CurrentScore { get => currentScore; set => currentScore = value; }
-
+    public int CurrentScore
+    { 
+        get { return currentScore;}
+        set {currentScore = value;}
+    }
 
     //Singleton Pattern to have only one GameStatus object during the whole game 
     private void Awake()
@@ -32,13 +35,11 @@ public class GameSession : MonoBehaviour
         }
     }
 
-    // Start is called before the first frame update
     void Start()
     {
         scoreText.text = CurrentScore.ToString();
     }
 
-    // Update is called once per frame
     void Update()
     {
         Time.timeScale = gameSpeed;
@@ -59,6 +60,4 @@ public class GameSession : MonoBehaviour
     {
         return isAutoplayEnabled;
     }
-
-
 }

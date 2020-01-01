@@ -789,7 +789,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e3c1a2ae975ca774ab45514f5d43ccbe, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  paddleOne: {fileID: 0}
+  paddle: {fileID: 0}
   velocityX: 2
   velocityY: 15
   ballSound:
@@ -797,7 +797,6 @@ MonoBehaviour:
   - {fileID: 8300000, guid: bafac667d4755624cbd869c27eb4742f, type: 3}
   - {fileID: 8300000, guid: 62f28e1c7b0895d46aba4b7f186dc545, type: 3}
   - {fileID: 8300000, guid: 6bc34c17e2b1a6d4d992ceccc6b739d7, type: 3}
-  randomFactor: 0.2
 --- !u!82 &99727226
 AudioSource:
   m_ObjectHideFlags: 0
@@ -2327,11 +2326,6 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalPosition.z
       value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 2471707531708897069, guid: fdb60618be06ae44486fc66e80645212,
-        type: 3}
-      propertyPath: gameSpeed
-      value: 0.8
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: fdb60618be06ae44486fc66e80645212, type: 3}
@@ -24399,6 +24393,11 @@ PrefabInstance:
     - target: {fileID: 1417900866933316503, guid: 59b757866dcb1a548b72634711cbf44e,
         type: 3}
       propertyPath: paddleOne
+      value: 
+      objectReference: {fileID: 1389600435}
+    - target: {fileID: 1417900866933316503, guid: 59b757866dcb1a548b72634711cbf44e,
+        type: 3}
+      propertyPath: paddle
       value: 
       objectReference: {fileID: 1389600435}
     m_RemovedComponents: []
