@@ -5,8 +5,10 @@ using UnityEngine.SceneManagement;
 
 public class LoseCollider : MonoBehaviour
 {
+    
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        SceneManager.LoadScene("Start Menu");
+        //SceneManager.LoadScene(0);
+        FindObjectOfType<SceneLoader>().CallStartScene();
     }
 }
